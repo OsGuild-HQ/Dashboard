@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Geist+Mono:wght@300;400;700;900&family=Outfit:wght@400;600;800;900&family=Source+Code+Pro:wght@900&display=swap');
+@import "tailwindcss";
+
+:root {
+  --font-sans: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'Geist Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  font-family: var(--font-sans);
+  background-color: #010409;
+  color: #ffffff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom Selection color */
+::selection {
+  background-color: #39d353;
+  color: #000000;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #010409;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #21262d;
+  border: 2px solid #010409;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #30363d;
+}
+
+/* Glowing neo-brutalist keyframe animation */
+@keyframes cyber-glow {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba(57, 211, 83, 0.2), 
+                2px 2px 0px 0px #000000;
+    border-color: #238636;
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(57, 211, 83, 0.5), 
+                4px 4px 0px 0px #000000;
+    border-color: #39d353;
+  }
+}
+
+.animate-glow {
+  animation: cyber-glow 3s infinite ease-in-out;
+}
+
+/* Scanning scanline overlay effect for avatars/visuals */
+.scanlines::after {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+  z-index: 2;
+  background-size: 100% 2px, 3px 100%;
+  pointer-events: none;
+}
